@@ -1,23 +1,157 @@
-<div class="navbar navbar-default">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <%= link_to "Comprar", root_path, class: "navbar-brand vertical-line"%>
-    <%= link_to "Vender", root_path, class: "navbar-brand vertical-line"%>
+<nav class="navbar yamm navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
 
-  </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav green">
+        <li class="dropdown yamm-fw">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Comprar <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <!-- Content container to add padding -->
+              <div class="yamm-content">
+                <div class="row">
+                  <ul class="col-sm-2 list-unstyled">
+                    <li>
+                      <p><strong>Section Title</strong></p>
+                    </li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                  </ul>
+                  <ul class="col-sm-2 list-unstyled">
+                    <li>
+                      <p><strong>Links Title</strong></p>
+                    </li>
+                    <li><a href="#"> Link Item </a></li>
+                    <li><a href="#"> Link Item </a></li>
+                    <li><a href="#"> Link Item </a></li>
+                    <li><a href="#"> Link Item </a></li>
+                    <li><a href="#"> Link Item </a></li>
+                    <li><a href="#"> Link Item </a></li>
+                  </ul>
+                  <ul class="col-sm-2 list-unstyled">
+                    <li>
+                      <p><strong>Section Title</strong></p>
+                    </li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                  </ul>
+                  <ul class="col-sm-2 list-unstyled">
+                    <li>
+                      <p><strong>Section Title</strong></p>
+                    </li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>
+                      <ul>
+                        <li><a href="#"> Link Item </a></li>
+                        <li><a href="#"> Link Item </a></li>
+                        <li><a href="#"> Link Item </a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown yamm-fw">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Vender <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <!-- Content container to add padding -->
+              <div class="yamm-content">
+                <div class="row">
+                  <ul class="col-sm-2 list-unstyled">
+                    <li>
+                      <p><strong>Section Title</strong></p>
+                    </li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                  </ul>
+                  <ul class="col-sm-2 list-unstyled">
+                    <li>
+                      <p><strong>Links Title</strong></p>
+                    </li>
+                    <li><a href="#"> Link Item </a></li>
+                    <li><a href="#"> Link Item </a></li>
+                    <li><a href="#"> Link Item </a></li>
+                    <li><a href="#"> Link Item </a></li>
+                    <li><a href="#"> Link Item </a></li>
+                    <li><a href="#"> Link Item </a></li>
+                  </ul>
+                  <ul class="col-sm-2 list-unstyled">
+                    <li>
+                      <p><strong>Section Title</strong></p>
+                    </li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                  </ul>
+                  <ul class="col-sm-2 list-unstyled">
+                    <li>
+                      <p><strong>Section Title</strong></p>
+                    </li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>
+                      <ul>
+                        <li><a href="#"> Link Item </a></li>
+                        <li><a href="#"> Link Item </a></li>
+                        <li><a href="#"> Link Item </a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
 
-  <div class="collapse navbar-collapse">
-    <ul class="nav navbar-nav navbar-right green">
-      <li><%= link_to "", root_path, class: "glyphicon glyphicon-search " %></li>
-      <li><%= link_to "", root_path, class: "glyphicon glyphicon-user " %></li>
-      <li><%= link_to "", root_path, class: "glyphicon glyphicon-heart " %></li>
-      <li><%= link_to "", root_path, class: "glyphicon glyphicon-shopping-cart " %></li>
-    </ul>
-  </div>
+      <ul class="nav navbar-nav navbar-right green">
+        <li class="dropdown yamm-fw">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Search</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Log in</a></li>
+            <li><a href="#">Sign up</a></li>
+          </ul>
+        </li>
+        <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
 
-</div>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
