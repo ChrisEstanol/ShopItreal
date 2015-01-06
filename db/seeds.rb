@@ -3,5 +3,16 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+cities = City.create([{
+  name: 'Barranquilla' },
+  { name: 'Cali' },
+  { name: 'Medellin' },
+  { name: 'Bogota' },
+  { name: 'Lorica' },
+  { name: 'Palmira' },
+  { name: 'Buga' },
+  { name: 'Pereira' },
+  { name: 'Tulua' },
+  ])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
