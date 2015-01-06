@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :products
+  resources :products do
+    resources :comments
+  end
 
   devise_for :users
   get 'pages/home'
