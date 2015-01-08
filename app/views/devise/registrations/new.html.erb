@@ -1,9 +1,6 @@
-<div class="panel panel-default panel-devise">
-  <div class="panel-heading">
+<div class="well well -lg well-devise">
     <h1>Sign up</h1>
-  </div>
 
-  <div class="panel-body">
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
@@ -21,9 +18,9 @@
         <%= f.submit "Sign up", class: "btn btn-primary" %>
       </div>
     <% end %>
+     <%= render "devise/shared/links" %>
   </div>
 
-  <div class="panel-footer">
-    <%= render "devise/shared/links" %>
-  </div>
-</div>
+
+
+
