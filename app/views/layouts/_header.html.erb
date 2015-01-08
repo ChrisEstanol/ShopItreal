@@ -155,8 +155,11 @@
           </ul>
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
-
+        <li>
+          <%= link_to cart_path do %>
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+          <% end %>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
