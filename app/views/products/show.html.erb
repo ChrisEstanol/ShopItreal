@@ -1,4 +1,4 @@
-<%= image_tag @product.image.url %>
+<%= image_tag @product.image.url(:medium) %>
 
 <p>
   <strong>Name:</strong>
@@ -14,7 +14,7 @@
   <strong>Description:</strong>
   <%= @product.description %>
 </p>
-<% if @pin.user == current_user %>
+<% if @product.user == current_user %>
   <%= link_to 'Edit', edit_product_path(@product) %> |
   <%= link_to 'Back', products_path %>
 <% end %>
