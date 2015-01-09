@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :stores
+
+  resources :products do
+    resources :comments
+  end
+
   devise_for :users
   get 'pages/home'
 
