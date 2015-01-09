@@ -1,6 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@mixin box-shadow {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+  box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+}
+
+body {
+  background: rgb(235, 238, 243);
+}
 /*!
  * Yamm!3 - Yet another megamenu for Bootstrap 3
  * http://geedmo.github.com/yamm3
@@ -30,10 +39,14 @@
  * end Yamm 3
  */
 
-// devise styling
+// DEVISE styling
   .well-devise {
     max-width: 400px;
     margin: 50px auto;
+    @include box-shadow;
+    max-width: 400px;
+    background-color: #27ae60;
+    color: white;
   }
 //
 
@@ -46,8 +59,18 @@
   text-align: center;
 }
 
+// NAVBAR Styling
+
 .navbar {
-  margin: 0;
+  margin-bottom: 50px;
+  @include box-shadow;
+  border: none;
+  .navbar-brand {
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size: 25px;
+  }
 }
 
 .nav.green li a {
@@ -60,6 +83,28 @@
   font-size: 2.5em;
   margin: 50px 0 0 50%;
 }
+
+// PRODUCTS Styling
+
+#products {
+  margin: 0 auto;
+}
+
+.box {
+  margin: 5px;
+  width: 214px;
+}
+
+.box img {
+  width: 100%;
+}
+
+.panel-body {
+  background-color: #F8F8F8;
+  @include box-shadow;
+}
+
+
 
 .carousel  {
   width: 100%;

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= image_tag @product.image.url(:medium) %>
 
 <p>
   <strong>Name:</strong>
@@ -14,6 +14,7 @@
   <strong>Description:</strong>
   <%= @product.description %>
 </p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<% if @product.user == current_user %>
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
+<% end %>
