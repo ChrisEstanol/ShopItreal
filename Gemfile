@@ -18,6 +18,9 @@ gem 'autoprefixer-rails'
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'
 gem 'paperclip', '~> 4.2.1'
 gem 'masonry-rails'
+gem 'therubyracer'
+
+gem 'jquery-fileupload-rails'
 
 
 group :development, :test do
