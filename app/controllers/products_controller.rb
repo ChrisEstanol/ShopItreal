@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    @uploads = @product.uploads
     respond_with(@product)
   end
 
@@ -24,13 +26,41 @@ class ProductsController < ApplicationController
 
   def create
     @product = current_user.products.new(product_params)
-    @product.save
-    respond_with(@product)
+
+    respond_to do |format|
+      if @product.save
+
+        if params[:images]
+          params[:images].each { |image|
+            @product.uploads.create(image: image)
+          }
+        end
+        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.json { render json: @product, status: :created, location: @product }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
-    @product.update(product_params)
-    respond_with(@product)
+    @product = Product.find(params[:id])
+
+    respond_to do |format|
+      if @product.update_attributes(product_params)
+        if params[:images]
+          params[:images].each { |image|
+            @product.uploads.create(image: image)
+          }
+        end
+        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
@@ -49,6 +79,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:name, :price, :description, :image)
+      params.require(:product).permit(:name, :price, :description, :uploads)
     end
 end
