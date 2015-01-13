@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+
 //= require bootstrap
 //= require turbolinks
 //= require jquery.turbolinks
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require masonry/jquery.masonry
 //= require_tree .
