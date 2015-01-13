@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108210859) do
+ActiveRecord::Schema.define(version: 20150113164240) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -40,13 +40,9 @@ ActiveRecord::Schema.define(version: 20150108210859) do
     t.string   "name"
     t.integer  "price"
     t.text     "description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id"
@@ -73,6 +69,19 @@ ActiveRecord::Schema.define(version: 20150108210859) do
 
   add_index "stores", ["city_id"], name: "index_stores_on_city_id"
   add_index "stores", ["user_id"], name: "index_stores_on_user_id"
+
+  create_table "uploads", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "uploads", ["product_id"], name: "index_uploads_on_product_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -1,5 +1,6 @@
-<%= image_tag @product.image.url(:medium) %>
-
+<% @uploads.each do |u| %>
+<%= image_tag u.image.url(:medium) %>
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
