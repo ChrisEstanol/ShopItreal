@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   resources :products do
     resources :comments
   end
-  resources :uploads
+
+  namespace :admin do
+    resources :products do
+      resources :uploads
+    end
+  end
 
   devise_for :users
   get 'pages/home'

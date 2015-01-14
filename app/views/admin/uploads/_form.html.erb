@@ -1,0 +1,29 @@
+<%= form_for([:admin, @product, @upload], html: { multipart: true }) do |f| %>
+  <% if @upload.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@upload.errors.count, "error") %> prohibited this upload from being saved:</h2>
+
+      <ul>
+        <% @upload.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.label :uploaded_file, t('.upload_new_file') %>
+    <%= f.file_field :uploaded_file, multiple: true, name: 'upload[image]' %>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<% # jquery upload template # %>
+<script id="template-upload" type="text/x-tmpl">
+  <div class="upload">{%=o.name%}
+    <div class="progress">
+      <div class="progress-bar bar" style="width: 0%">
+      </div>
+    </div>
+  </div>
+</script>
