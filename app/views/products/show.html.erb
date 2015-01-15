@@ -14,9 +14,11 @@
   <%= @product.description %>
 </p>
 
-<% @product.uploads.each do |upload| %>
-  <%= image_tag(upload.image(:medium)) %>
-<% end %>
+<div id="galleria">
+  <% @product.uploads.each do |upload| %>
+    <%= image_tag(upload.image(:medium)) %>
+  <% end %>
+</div>
 
 
 <h4>Comments</h4>
@@ -27,4 +29,11 @@
 
   <%= render 'comments/form' %>
 
+  <script>
+    // Load the classic theme
+    Galleria.loadTheme('galleria.classic.min.js');
+
+    // Initialize Galleria
+    Galleria.run('#galleria');
+  </script>
 
