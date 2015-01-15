@@ -19,3 +19,12 @@
 <% end %>
 
 
+<h4>Comments</h4>
+  <% @product.comments.each do |comment| %>
+   <%= render 'comments/comment', comment: comment %>
+  <% end %>
+  <%# we could replace these 3 lines with <%= render @article.comments %>
+
+  <%= render 'comments/form' %>
+
+

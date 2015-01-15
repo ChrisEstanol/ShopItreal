@@ -84,6 +84,15 @@ body {
   margin: 50px 0 0 50%;
 }
 
+.image-circle {
+border-radius: 50%;
+border: 2px solid #27ae60;
+}
+
+img.image-circle {
+  width: 40px;
+}
+
 // PRODUCTS Styling
 
 #products {

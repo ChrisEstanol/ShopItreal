@@ -21,6 +21,7 @@ gem 'masonry-rails'
 gem 'therubyracer'
 
 gem 'jquery-fileupload-rails'
+gem 'gravatar-ultimate'
 
 
 group :development, :test do
