@@ -16,6 +16,7 @@
 
 <% @product.uploads.each do |upload| %>
   <%= image_tag(upload.image(:thumb)) %>
+  <%= link_to 'Delete', [:admin, @product, upload], method: :delete, data: { confirm: "Are you sure?"} %>
 <% end %>
 
 <%= render 'admin/uploads/form' %>

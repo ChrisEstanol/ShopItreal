@@ -5,6 +5,7 @@
 jQuery ->
   $('#new_upload').fileupload
     dataType: 'script'
+    autoUpload: true
     add: (e, data) ->
       types = /(\.|\/)(gif|jpe?g|png|mov|mpeg|mpeg4|avi)$/i
       file = data.files[0]
@@ -22,3 +23,5 @@ jQuery ->
         data.context.find('.bar').css('width', progress + '%')
     done: (e, data) ->
       $('.actions input[type="submit"]').off('click')
+  .bind 'fileuploaddone', (e, data) ->
+    window.location.reload()

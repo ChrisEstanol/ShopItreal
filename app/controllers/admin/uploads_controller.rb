@@ -28,33 +28,27 @@ class Admin::UploadsController < ApplicationController
   def create
     @upload = Upload.new(upload_params)
     @upload.product_id = params[:product_id]
-    if @upload.save
-      redirect_to admin_product
-    end
+    @upload.save
+
   end
 
   # PATCH/PUT /uploads/1
   # PATCH/PUT /uploads/1.json
   def update
-    respond_to do |format|
+
       if @upload.update(upload_params)
-        format.html { redirect_to @upload, notice: 'Upload was successfully updated.' }
-        format.json { head :no_content }
+        redirect_to @upload, notice: 'Upload was successfully updated.'
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @upload.errors, status: :unprocessable_entity }
+        render action: 'edit'
       end
-    end
+
   end
 
   # DELETE /uploads/1
   # DELETE /uploads/1.json
   def destroy
     @upload.destroy
-    respond_to do |format|
-      format.html { redirect_to uploads_url }
-      format.json { head :no_content }
-    end
+      redirect_to [:admin, upload.product, @upload]
   end
 
   private
@@ -65,6 +59,6 @@ class Admin::UploadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def upload_params
-      params[:upload].permit(:image)
+      params[:upload].permit(:image, :product_id)
     end
 end
