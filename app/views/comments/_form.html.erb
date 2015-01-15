@@ -1,0 +1,10 @@
+<%= form_for([@product, @product.comments.build]) do |f| %>
+
+  <div class="form-group">
+    <%= f.text_area :body, :class => "form-control", :rows => "3" %>
+  </div>
+  <div class="form-actions  clearfix">
+    <%= f.submit :class => "btn btn-primary pull-right" %>
+  </div>
+<% end %>
+

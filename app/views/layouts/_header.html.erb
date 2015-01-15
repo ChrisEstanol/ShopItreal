@@ -141,8 +141,21 @@
             <li><a href="#">Search</a></li>
           </ul>
         </li>
+        <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></li>
+        <li>
+          <%= link_to cart_path do %>
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+          <% end %>
+        </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          <% if user_signed_in? %>
+          <%= image_tag Gravatar.new(current_user.email).image_url, :class => "image-circle" %>
+          <% else %>
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          <% end %>
+          <span class="caret"></span>
+          </a>
           <ul class="dropdown-menu" role="menu">
             <% if user_signed_in? %>
             <li><%= link_to "Users", admin_users_path %></li>
@@ -153,12 +166,6 @@
               <li><%= link_to "Sign up", new_user_registration_path %></li>
             <% end %>
           </ul>
-        </li>
-        <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></li>
-        <li>
-          <%= link_to cart_path do %>
-            <span class="glyphicon glyphicon-shopping-cart"></span>
-          <% end %>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
