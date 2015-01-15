@@ -1,7 +1,9 @@
 <div id="products" class="transitions-enabled">
   <% @products.each do |product| %>
     <div class="box panel panel-default">
-      <%= link_to image_tag(product.uploads.first.image.url(:medium)), product_path(product) %>
+      <% if product.uploads.image.exists? %>
+        <%= link_to image_tag(product.uploads.first.image.url(:medium)), admin_product_path(product) %>
+      <% end %>
       <div class="panel-body">
         <%= product.description %>
         <%= product.user.email if product.user %>

@@ -10,6 +10,8 @@
 
 <%= render 'layouts/header' %>
 
+<div class="container">
+
 <%# Rails flash messages styled for Bootstrap 3.0 %>
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
@@ -21,7 +23,7 @@
 <% end %>
 
 <%= yield %>
-
+</div>
 
 </body>
 </html>
