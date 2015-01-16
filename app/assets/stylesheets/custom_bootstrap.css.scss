@@ -61,8 +61,8 @@ body {
 
 // NAVBAR Styling
 
+
 .navbar {
-  margin-bottom: 50px;
   @include box-shadow;
   border: none;
   .navbar-brand {
@@ -113,4 +113,11 @@ img.image-circle {
   @include box-shadow;
 }
 
-
+#galleria {
+  width: 500px;
+  height: 400px;
+  background: white;
+}
+.galleria-theme-classic {
+  background-color: #fff;
+}
