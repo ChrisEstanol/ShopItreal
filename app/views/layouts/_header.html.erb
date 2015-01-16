@@ -145,6 +145,7 @@
         <li>
           <%= link_to cart_path do %>
             <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span class="badge"><%=current_user.cart_count%></span>
           <% end %>
         </li>
         <li class="dropdown">
