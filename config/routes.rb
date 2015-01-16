@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
+  get 'carts/show'
+
+  resource :cart, only: [:show] do
+    put 'add/:product_id', to: 'carts#add', as: :add_to
+    put 'remove/:product_id', to: 'carts#remove', as: :remove_from
+  end
+
   namespace :admin do
     resources :users
+    resources :products do
+      resources :uploads
+    end
   end
   resources :stores
 
@@ -8,18 +18,11 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  namespace :admin do
-    resources :products do
-      resources :uploads
-    end
-  end
-
   devise_for :users
   get 'pages/home'
 
   root 'products#index'
 
-  get "cart" => "pages#cart"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

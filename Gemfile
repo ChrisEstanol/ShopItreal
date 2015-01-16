@@ -23,6 +23,9 @@ gem 'therubyracer'
 gem 'jquery-fileupload-rails'
 gem 'gravatar-ultimate'
 
+gem 'redis', '~> 3.2.0'
+gem 'hiredis', '~> 0.5.2'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

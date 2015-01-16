@@ -84,6 +84,7 @@ GEM
       activesupport (>= 2.3.14)
       rack
     hike (1.2.3)
+    hiredis (0.5.2)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -154,6 +155,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redis (3.2.0)
     ref (1.0.5)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
@@ -210,6 +212,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise!
   gravatar-ultimate
+  hiredis (~> 0.5.2)
   jbuilder (~> 2.0)
   jquery-fileupload-rails
   jquery-rails
@@ -219,6 +222,7 @@ DEPENDENCIES
   pg (~> 0.18.1)
   rails (= 4.2.0)
   rails_12factor
+  redis (~> 3.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

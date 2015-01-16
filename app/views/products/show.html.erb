@@ -14,6 +14,13 @@
   <%= @product.description %>
 </p>
 
+<%if signed_in?%>
+  <%=link_to "", class: "btn btn-default", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)} do%>
+    <span class="glyphicon glyphicon-shopping-cart"></span>
+    <span><%=@cart_action%></span> Cart
+  <%end%>
+<%end%>
+
 <div id="galleria">
   <% @product.uploads.each do |upload| %>
     <%= image_tag(upload.image(:medium)) %>
