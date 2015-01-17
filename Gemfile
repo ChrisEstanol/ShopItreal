@@ -25,6 +25,7 @@ gem 'gravatar-ultimate'
 
 gem 'redis', '~> 3.2.0'
 gem 'hiredis', '~> 0.5.2'
+gem 'aws-sdk', '~> 1.61.0'
 
 
 group :development, :test do
