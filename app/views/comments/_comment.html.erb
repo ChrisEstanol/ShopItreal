@@ -1,18 +1,12 @@
-<p>
-  <%= l(comment.created_at, format: '%d %b %y') %>
-</p>
-
-<div class="col-xs-2 text-center comment">
-  <%= image_tag Gravatar.new(comment.user.email).image_url, :class => "image-circle" %>
-  <p><%= comment.user.name %></p>
-</div>
-
-
-<div class="col-xs-10">
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
+<div class="media">
+  <a class="media-left" href="#">
+    <%= image_tag Gravatar.new(comment.user.email).image_url, :class => "image-circle" %>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><%= comment.user.name %></h4>
+    <span><%= l(comment.created_at, format: '%d %b %y') %></span>
+    <p><%= comment.body %></p>
+  </div>
 </div>
 
 <% if comment.user == current_user %>

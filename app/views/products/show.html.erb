@@ -1,4 +1,23 @@
-<h2>Product details</h2>
+<div class="row shadow-wrapper">
+<div class="col-md-7">
+
+<div id="galleria">
+  <% @product.uploads.each do |upload| %>
+    <%= image_tag(upload.image(:medium)) %>
+  <% end %>
+</div>
+
+
+<h4>Comments</h4>
+  <% @product.comments.each do |comment| %>
+   <%= render 'comments/comment', comment: comment %>
+  <% end %>
+  <%# we could replace these 3 lines with <%= render @article.comments %>
+
+  <%= render 'comments/form' %>
+  </div>
+  <div class="col-md-5">
+    <h2>Product details</h2>
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -20,22 +39,8 @@
     <span><%=@cart_action%></span> Cart
   <%end%>
 <%end%>
-
-<div id="galleria">
-  <% @product.uploads.each do |upload| %>
-    <%= image_tag(upload.image(:medium)) %>
-  <% end %>
+  </div>
 </div>
-
-
-<h4>Comments</h4>
-  <% @product.comments.each do |comment| %>
-   <%= render 'comments/comment', comment: comment %>
-  <% end %>
-  <%# we could replace these 3 lines with <%= render @article.comments %>
-
-  <%= render 'comments/form' %>
-
   <script>
 
 
