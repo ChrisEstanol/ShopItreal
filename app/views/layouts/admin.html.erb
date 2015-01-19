@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <title>SCREcommerce</title>
@@ -14,34 +14,29 @@
 
   <!-- Sidebar -->
   <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-          <li class="sidebar-brand">
-              <a href="#">
-                  Admin panel
-              </a>
-          </li>
-          <li>
-              <a href="#">Dashboard</a>
-          </li>
-          <li>
-              <a href="#">Shortcuts</a>
-          </li>
-          <li>
-              <a href="#">Overview</a>
-          </li>
-          <li>
-              <a href="#">Events</a>
-          </li>
-          <li>
-              <a href="#">About</a>
-          </li>
-          <li>
-              <a href="#">Services</a>
-          </li>
-          <li>
-              <a href="#">Contact</a>
-          </li>
-      </ul>
+    <div class="sidebar-nav">
+      <h3>Dashboard</h3>
+    <ul class="border-bottom">
+      <h4>User admin</h4>
+      <li><%= link_to "All user", admin_users_path %></li>
+    </ul>
+    <ul class="border-bottom">
+      <h4>My profile</h4>
+      <li>
+        <a href="#">Edit profile</a>
+      </li>
+      <li>
+        <a href="#">New product</a>
+      </li>
+    </ul>
+    <ul>
+      <h4>Products</h4>
+      <li><%= link_to "All products", admin_products_path %></li>
+      <li><%= link_to "New product", new_admin_product_path %></li>
+
+    </ul>
+
+    </div>
   </div>
   <!-- /#sidebar-wrapper -->
 

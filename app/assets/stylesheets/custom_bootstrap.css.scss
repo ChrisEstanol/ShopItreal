@@ -7,8 +7,12 @@
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 }
 
+$green: #27ae60;
+$green-hover: #16a085;
+
 body {
   background-color: #E9EAED;
+  padding-top: 70px;
 }
 
 .shadow-wrapper {
@@ -54,7 +58,7 @@ body {
     margin: 50px auto;
     @include box-shadow;
     max-width: 400px;
-    background-color: #27ae60;
+    background-color: $green;
     color: white;
   }
 //
@@ -75,6 +79,7 @@ body {
   @include box-shadow;
   border: none;
   background-color: #fff;
+  margin-bottom: 51px;
   .navbar-brand {
     text-transform: uppercase;
     letter-spacing: -1px;
@@ -85,7 +90,11 @@ body {
 
 .nav.green li a {
   font-size: 1.8em;
-  color: #27ae60;
+  color: $green;
+}
+
+.nav.green li a:hover {
+  color: $green-hover;
 }
 
 .icon-center{
@@ -96,7 +105,7 @@ body {
 
 .image-circle {
 border-radius: 50%;
-border: 2px solid #27ae60;
+border: 2px solid $green;
 }
 
 img.image-circle {
