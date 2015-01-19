@@ -6,10 +6,11 @@ class ProductsController < ApplicationController
 
   def index
     @search = Product.search(params[:q])
-    @products = @search.result
+    @products = @search.result(distinct: true)
   end
 
   def show
+    @search = Product.search(params[:q])
     @product = Product.find(params[:id])
     @cart_action = @product.cart_action current_user.try :id
     respond_with(@product)

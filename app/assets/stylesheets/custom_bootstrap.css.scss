@@ -10,6 +10,10 @@
 $green: #27ae60;
 $green-hover: #16a085;
 
+// html {
+//   height: 100%
+// }
+
 body {
   background-color: #E9EAED;
   padding-top: 70px;
@@ -112,6 +116,23 @@ img.image-circle {
   width: 40px;
 }
 
+input.search-input.form-control {
+  display: block;
+  margin: 0;
+  /* padding: 0 0 0.15em; */
+  width: 100%;
+  border: none;
+  /* border-bottom: 2px solid rgba(0,0,0,0.2); */
+  /* background-color: transparent; */
+  /* color: #fffed8; */
+  text-overflow: ellipsis;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+  input.search-input.form-control:focus {
+    outline:none;
+}
+
 // PRODUCTS Styling
 
 #products {
@@ -128,7 +149,7 @@ img.image-circle {
 }
 
 .panel-body {
-  background-color: #F8F8F8;
+  background-color: #fff;
   @include box-shadow;
 }
 
@@ -146,4 +167,11 @@ border-radius: 6px;
 }
 .galleria-theme-classic {
   background-color: #fff;
+}
+footer {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 60px;
+background-color: #f5f5f5;
 }

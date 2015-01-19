@@ -22,9 +22,7 @@
     </ul>
     <ul class="border-bottom">
       <h4>My profile</h4>
-      <li>
-        <a href="#">Edit profile</a>
-      </li>
+      <li><%= link_to "Edit profile", edit_user_registration_path %></li>
       <li>
         <a href="#">New product</a>
       </li>
@@ -61,7 +59,9 @@
   </div>
 
 
+
 </div>
+
   <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
