@@ -1,4 +1,4 @@
-<nav class="navbar yamm navbar-default navbar-admin">
+<nav class="navbar yamm navbar-default navbar-admin navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -138,14 +138,18 @@
         <li class="dropdown yamm-fw">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Search</a></li>
+          <%= search_form_for @search, html: { class: "form-inline search-form"} do |f| %>
+            <%= f.text_field :name_or_description_cont, class: "search-input form-control", autofocus: true, placeholder: "Search..." %>
+          <% end %>
           </ul>
         </li>
         <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></li>
         <li>
           <%= link_to cart_path do %>
             <span class="glyphicon glyphicon-shopping-cart"></span>
-            <span class="badge"><%=current_user.cart_count%></span>
+            <% if user_signed_in? %>
+              <span class="badge"><%=current_user.cart_count%></span>
+            <% end %>
           <% end %>
         </li>
         <li class="dropdown">

@@ -1,4 +1,15 @@
 <%= form_for [:admin, @product], html: { multipart: true } do |f| %>
+  <% if @product.errors.any? %>
+    <div class="alert alert-danger fade in">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <ul>
+         <% @product.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+         <% end %>
+      </ul>
+   </div>
+  <% end %>
+
 
   <div class="form-group">
     <%= f.label :name %><br>
@@ -13,7 +24,7 @@
     <%= f.text_area :description, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create', class: 'btn btn-default pull-right' %>
   </div>
 <% end %>
 

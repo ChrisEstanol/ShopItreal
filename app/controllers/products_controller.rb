@@ -5,11 +5,12 @@ class ProductsController < ApplicationController
   respond_to :html
 
   def index
-    @products = Product.all
-    respond_with(@products)
+    @search = Product.search(params[:q])
+    @products = @search.result(distinct: true)
   end
 
   def show
+    @search = Product.search(params[:q])
     @product = Product.find(params[:id])
     @cart_action = @product.cart_action current_user.try :id
     respond_with(@product)

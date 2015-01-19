@@ -10,6 +10,9 @@
 
 /* Toggle Styles */
 
+$green: #27ae60;
+$green-hover: #16a085;
+
 .navbar.navbar-admin {
     margin-bottom: 0;
 }
@@ -28,7 +31,7 @@
 
 #sidebar-wrapper {
     z-index: 1000;
-    position: fixed;
+
     left: 250px;
     width: 0;
     height: 100%;
@@ -61,49 +64,54 @@
 
 .sidebar-nav {
     position: absolute;
-    top: 0;
+    top: 20;
     width: 250px;
     margin: 0;
-    padding: 0;
+    padding: 0 30px;
     list-style: none;
 }
 
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
+.sidebar-nav h4 {
+  color: grey;
 }
 
-.sidebar-nav li a {
+.sidebar-nav ul {
+  list-style-type: none;
+  padding: 10px 0;
+}
+
+.sidebar-nav ul.border-bottom {
+  border-bottom: 1px solid lightgrey;
+}
+
+
+.sidebar-nav ul li {
+    text-indent: 10px;
+    line-height: 30px;
+}
+
+.sidebar-nav ul li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: $green;
 }
 
-.sidebar-nav li a:hover {
+.sidebar-nav ul li a:hover {
     text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
+    color: $green-hover;
 }
 
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
+.sidebar-nav ul li a:active,
+.sidebar-nav ul li a:focus {
     text-decoration: none;
 }
 
-.sidebar-nav > .sidebar-brand {
+.sidebar-nav > .sidebar-title {
     height: 65px;
     font-size: 18px;
     line-height: 60px;
 }
 
-.sidebar-nav > .sidebar-brand a {
-    color: #999999;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
-}
 
 @media(min-width:768px) {
     #wrapper {
@@ -155,7 +163,7 @@
       display: block;
       float: left;
       height: 50px;
-      background: #3498db;
+      background: $green;
       text-align: center;
       padding: 10px 40px 0 80px;
       position: relative;
@@ -167,43 +175,52 @@
     }
       #crumbs ul li a:after {
         content: "";
-        border-top: 40px solid transparent;
-        border-bottom: 40px solid transparent;
-        border-left: 40px solid #3498db;
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent;
+        border-left: 40px solid $green;
         position: absolute;
         right: -40px;
-        top: -14px;
+        top: 0px;
         z-index: 1;
+      }
+
+      #crumbs ul li a:hover:after {
+        border-left: 40px solid $green-hover;
       }
 
       #crumbs ul li a:before {
         content: "";
-        border-top: 40px solid transparent;
-        border-bottom: 40px solid transparent;
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent;
         border-left: 40px solid #fff;
         position: absolute;
         left: 0;
-        top: -14px;
+        top: 0px;
       }
 
         #crumbs ul li:first-child a {
-          border-top-left-radius: 10px; border-bottom-left-radius: 10px;
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
         }
         #crumbs ul li:first-child a:before {
           display: none;
         }
         #crumbs ul li:last-child a {
           padding-right: 80px;
-          border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;
         }
         #crumbs ul li:last-child a:after {
           display: none;
         }
 
-      // #crumbs ul li a:hover {
-      //   background: #fa5ba5;
-      // }
-      //   #crumbs ul li a:hover:after {
-      //     border-left-color: #fa5ba5;
-      //   }
+      #crumbs ul li a:hover {
+        background: $green-hover;
+      }
+      #crumbs li.disabled a {
+        background-color: lightgrey;
+      }
+      #crumbs li.disabled a:hover {
+        background-color: lightgrey;
+      }
 
