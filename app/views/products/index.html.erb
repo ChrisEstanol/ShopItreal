@@ -5,8 +5,8 @@
         <%= link_to image_tag(product.uploads.first.image.url(:medium)), product_path(product) %>
       <% end %>
       <div class="panel-body">
-        <%= product.price %>
-        <%= product.user.name %>
+        <h5><%= product.name %></h5>
+        <p class="pull-right">$<%= product.price %></p>
       </div>
     </div>
   <% end %>
