@@ -1,49 +1,63 @@
 <div class="row shadow-wrapper">
-<div class="col-md-7">
+  <div class="col-md-7">
 
-<div id="galleria">
-  <% @product.uploads.each do |upload| %>
-    <%= image_tag(upload.image(:medium)) %>
-  <% end %>
-</div>
+  <div id="galleria">
+    <% @product.uploads.each do |upload| %>
+      <%= image_tag(upload.image(:medium)) %>
+    <% end %>
+  </div>
 
 
-<h4>Comments</h4>
+  <h4>Comments</h4>
+
   <% @product.comments.each do |comment| %>
    <%= render 'comments/comment', comment: comment %>
   <% end %>
-  <%# we could replace these 3 lines with <%= render @article.comments %>
+  <%# we could replace these 3 lines with <%= render @product.comments %>
 
   <%= render 'comments/form' %>
   </div>
   <div class="col-md-5">
     <h2>Product details</h2>
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @product.name %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+    <p>
+      <strong>Stock:</strong>
+      <%= @product.quantity %>
+    </p>
 
-<%if signed_in?%>
-  <%=link_to "", class: "btn btn-default", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)} do%>
-    <span class="glyphicon glyphicon-shopping-cart"></span>
-    <span><%=@cart_action%></span> Cart
-  <%end%>
-<%end%>
+    <p>
+      <strong>Description:</strong>
+      <%= @product.description %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= @product.price %>
+    </p>
+
+    <div class="well well-sm">
+
+    <div class="form-group col-sm-3">
+
+    </div>
+
+    <%if signed_in?%>
+      <%=link_to "", class: "btn btn-warning", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)}, 'data-no-turbolink' => true do%>
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <span><%=@cart_action%></span> Cart
+      <%end%>
+    <%end%>
+    </div>
+
   </div>
 </div>
+
   <script>
-
-
     // Initialize Galleria
     Galleria.run('#galleria');
   </script>
