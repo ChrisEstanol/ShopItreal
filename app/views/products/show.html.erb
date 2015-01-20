@@ -35,26 +35,27 @@
     </p>
     <p>
       <strong>Price:</strong>
-      <%= @product.price %>
+      $<%= @product.price %>
     </p>
 
     <div class="well well-sm clearfix">
-
+  <%= form_tag add_to_cart_path(@product), method: :put do %>
     <div class="form-group col-sm-3 text-center">
-      <%= form_for @product do |f| %>
-      <%= f.label :quantity %>
-       <%= f.select(:quantity, quantity_options(@product.quantity), {}, {:class => 'form-control'}) %>
-     <% end %>
+      <%= label_tag :quantity %>
+      <%= select_tag(:quantity, quantity_options(@product.quantity), {:class => 'form-control'}) %>
     </div>
     <div class="col-sm-9 text-center">
      <%if signed_in?%>
-       <%= link_to "", class: "btn btn-warning btn-cart", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)}, 'data-no-turbolink' => true do%>
-         <span class="glyphicon glyphicon-shopping-cart"></span>
-         <span><%=@cart_action%></span> Cart
-       <%end%>
+        <% if @product.in_cart?(current_user.id) %>
+          <%= link_to "Remove from cart", remove_from_cart_path(@product), method: :put, class: "btn btn-warning btn-cart" %>
+        <% else %>
+          <button type="submit" class="btn btn-warning btn-cart">
+            <span class='glyphicon glyphicon-shopping-cart'></span> Add to cart
+          </button>
+        <% end %>
      <%end%>
     </div>
-
+  <% end %>
   </div>
 
 </div>

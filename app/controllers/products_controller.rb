@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
   def show
     @search = Product.search(params[:q])
     @product = Product.find(params[:id])
-    @cart_action = @product.cart_action current_user.try :id
     respond_with(@product)
   end
 
