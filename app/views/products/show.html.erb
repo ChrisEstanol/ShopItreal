@@ -17,6 +17,7 @@
 
   <%= render 'comments/form' %>
   </div>
+
   <div class="col-md-5">
     <h2>Product details</h2>
     <p>
@@ -24,37 +25,38 @@
       <%= @product.name %>
     </p>
 
-
-    <p>
-      <strong>Stock:</strong>
-      <%= @product.quantity %>
-    </p>
-
     <p>
       <strong>Description:</strong>
       <%= @product.description %>
     </p>
-
+    <p>
+      <strong>Stock:</strong>
+      <%= @product.quantity %>
+    </p>
     <p>
       <strong>Price:</strong>
       <%= @product.price %>
     </p>
 
-    <div class="well well-sm">
+    <div class="well well-sm clearfix">
 
-    <div class="form-group col-sm-3">
-
+    <div class="form-group col-sm-3 text-center">
+      <%= form_for @product do |f| %>
+      <%= f.label :quantity %>
+       <%= f.select(:quantity, quantity_options(@product.quantity), {}, {:class => 'form-control'}) %>
+     <% end %>
     </div>
-
-    <%if signed_in?%>
-      <%=link_to "", class: "btn btn-warning", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)}, 'data-no-turbolink' => true do%>
-        <span class="glyphicon glyphicon-shopping-cart"></span>
-        <span><%=@cart_action%></span> Cart
-      <%end%>
-    <%end%>
+    <div class="col-sm-9 text-center">
+     <%if signed_in?%>
+       <%= link_to "", class: "btn btn-warning btn-cart", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)}, 'data-no-turbolink' => true do%>
+         <span class="glyphicon glyphicon-shopping-cart"></span>
+         <span><%=@cart_action%></span> Cart
+       <%end%>
+     <%end%>
     </div>
 
   </div>
+
 </div>
 
   <script>
