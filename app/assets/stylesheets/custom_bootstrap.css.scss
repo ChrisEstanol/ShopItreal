@@ -166,13 +166,19 @@ border-radius: 6px;
 }
 
 #galleria {
-  width: 500px;
-  height: 400px;
+  width: 600px;
+  height: 500px;
   background: white;
 }
 .galleria-theme-classic {
   background-color: #fff;
 }
+
+.sqs-gallery-controls .previous { display: none !important; }
+.sqs-gallery-controls .next { display: none !important; }
+.nav-button.prev-slide { display: none !important; }
+.nav-button.next-slide { display: none !important; }
+
 footer {
 position: absolute;
 bottom: 0;
