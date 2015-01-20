@@ -4,6 +4,16 @@
 
 
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <% if resource.errors.any? %>
+          <div class="alert alert-danger fade in">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <ul>
+               <% resource.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+               <% end %>
+            </ul>
+         </div>
+        <% end %>
 
       <div class="form-group">
         <%= f.label :email %>

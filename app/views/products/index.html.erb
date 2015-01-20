@@ -5,13 +5,8 @@
         <%= link_to image_tag(product.uploads.first.image.url(:medium)), product_path(product) %>
       <% end %>
       <div class="panel-body">
-        <%= product.description %>
-        <%= product.user.email if product.user %>
-        <%= link_to 'Show', product_path(product) %>
-        <% if product.user == current_user %>
-          <%= link_to 'Edit', edit_product_path(product) %>
-          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
+        <%= product.price %>
+        <%= product.user.name %>
       </div>
     </div>
   <% end %>

@@ -6,7 +6,16 @@
   </div>
   <div class="panel-body">
     <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-      <%= devise_error_messages! %>
+      <% if resource.errors.any? %>
+          <div class="alert alert-danger fade in">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <ul>
+               <% resource.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+               <% end %>
+            </ul>
+         </div>
+        <% end %>
 
       <div class="form-group">
         <%= f.label :email %>

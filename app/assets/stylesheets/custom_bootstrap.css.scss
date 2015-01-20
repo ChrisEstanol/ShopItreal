@@ -107,6 +107,11 @@ body {
   margin: 50px 0 0 50%;
 }
 
+.navbar-nav>li>a.avatar {
+padding-top: 9px;
+padding-bottom: 5px;
+}
+
 .image-circle {
 border-radius: 50%;
 border: 2px solid $green;
