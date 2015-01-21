@@ -1,38 +1,37 @@
 
 <div class="row shadow-wrapper">
   <div id="crumbs">
-      <ul class="nav nav-list">
-        <li><a href="#">Create a new product</a></li>
-        <li class="disabled"><a href="#">Upload pictures</a></li>
-      </ul>
-    </div>
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-<p>
-  <strong>Stock:</strong>
-  <%= @product.quantity %>
-</p>
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+    <ul class="nav nav-list">
+      <li class="disabled"><a href="#">Create a new product</a></li>
+      <li><a href="#">Upload pictures</a></li>
+    </ul>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <div class="col-md-6 col-md-offset-3">
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
+  <p>
+    <strong>Stock:</strong>
+    <%= @product.quantity %>
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= @product.price %>
+  </p>
 
-<% @product.uploads.each do |upload| %>
-  <%= image_tag(upload.image(:thumb)) %>
-  <%= link_to 'Delete', [:admin, @product, upload], method: :delete, data: { confirm: "Are you sure?"} %>
-<% end %>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
 
-<%= render 'admin/uploads/form' %>
+  <% @product.uploads.each do |upload| %>
+    <%= image_tag(upload.image(:thumb)) %>
+    <%= link_to 'Delete', [:admin, @product, upload], method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end %>
 
-<% if @product.user == current_user %>
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %>
-<% end %>
+  <%= render 'admin/uploads/form' %>
+  </div>
+
 </div>

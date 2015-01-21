@@ -24,7 +24,6 @@
       <h4>My profile</h4>
       <li><%= link_to "Edit profile", edit_user_registration_path %></li>
       <li>
-        <a href="#">New product</a>
       </li>
     </ul>
     <ul>
@@ -41,6 +40,9 @@
   <!-- Page Content -->
   <div id="page-content-wrapper">
     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+    <%= link_to new_admin_product_path, class: "btn btn-warning pull-right" do %>
+      <span class="glyphicon glyphicon-plus"></span> New product
+    <% end %>
       <div class="container-fluid">
 
         <%# Rails flash messages styled for Bootstrap 3.0 %>

@@ -1,9 +1,9 @@
 <nav class="progress">
   <ol>
     <li class="active"><a href="/cart">Your basket</a></li>
-    <li>Delivery details</li>
-    <li>Confirm order</li>
-    <li>Payment</li>
+    <li class="active"><a href="/cart">Your basket</a></li>
+    <li class="active"><a href="/cart">Your basket</a></li>
+    <li class="active"><a href="/cart">Your basket</a></li>
   </ol>
   <span>25% complete</span>
 </nav>
@@ -13,70 +13,72 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Product</th>
-          <th>Quantity</th>
+          <th class="text-center">Product</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Quantity</th>
           <th class="text-center">Price</th>
           <th class="text-center">Total</th>
-          <th> </th>
+          <th class="text-center">Remove</th>
         </tr>
       </thead>
       <tbody>
       <% @cart_products.each do |product|%>
         <tr>
-          <td class="col-sm-8 col-md-6 cart-product">
-          <div class="media">
-            <%= link_to image_tag(product.uploads.first.image.url(:thumb)), product_path(product) %>
-            <div class="media-body">
-              <h4 class="media-heading"><a href="#"><%= product.name %></a></h4>
-            </div>
-          </div></td>
-            <td class="col-sm-1 col-md-1" style="text-align: center">
-            <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+          <td class="col-sm-3 col-md-3 cart-product ">
+            <div class="media text-center">
+              <%= link_to image_tag(product.uploads.first.image.url(:thumb)), product_path(product) %>
+              </div>
             </td>
-            <td class="col-sm-1 col-md-1 text-center"><strong>$<%= product.price %></strong></td>
-            <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
-            <td class="col-sm-1 col-md-1">
+            <td class="col-sm-2 col-md-2 text-center">
+              <h4 class="media-heading"><%= link_to product.name, product_path(product) %></a></h4>
+            </td>
+            <td class="col-sm-2 col-md-2 text-center"><%= product.quantity %></td>
+            </td>
+            <td class="col-sm-2 col-md-2 text-center">$<%= product.price %></td>
+            <td class="col-sm-2 col-md-2 text-center"><strong>$14.61</strong></td>
+            <td class="col-sm-1 col-md-1 text-center">
             <%=link_to remove_from_cart_path(product), method: :put do%>
-            <span class="glyphicon glyphicon-trash"></span> Remove
+            <span class="glyphicon glyphicon-trash"></span>
             <%end%>
             </td>
         </tr>
         <% end %>
         <tr>
-          <td>   </td>
-          <td>   </td>
-          <td>   </td>
-          <td><h5>Subtotal</h5></td>
-          <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="col-sm-1 col-md-1 text-center"><h5>Subtotal</h5> </td>
+          <td class="col-sm-2 col-md-2 text-center"><h5><strong>$24.59</strong></h5></td>
+          <td class="col-sm-3 col-md-3 text-center"></td>
         </tr>
         <tr>
           <td>   </td>
           <td>   </td>
           <td>   </td>
           <td><h5>Estimated shipping</h5></td>
-          <td class="text-right"><h5><strong>$6.94</strong></h5></td>
+          <td class="text-center"><h5><strong>$6.94</strong></h5></td>
         </tr>
         <tr>
           <td>   </td>
           <td>   </td>
           <td>   </td>
-          <td><h3>Total</h3></td>
-          <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+          <td class="text-center"><h3>Total</h3></td>
+          <td class="text-center"><h3><strong>$31.53</strong></h3></td>
         </tr>
-        <tr>
-          <td>   </td>
-          <td>   </td>
-          <td>   </td>
-          <td>
-          <button type="button" class="btn btn-default">
-              <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-          </button></td>
-          <td>
-          <button type="button" class="btn btn-success">
-              Checkout <span class="glyphicon glyphicon-play"></span>
-          </button></td>
-        </tr>
+
+
       </tbody>
     </table>
+
+      <div class="pull-right">
+        <%= link_to root_path, class: "btn btn-default" do %>
+          <i class="glyphicon glyphicon-shopping-cart">Continue shopping</i>
+        <% end %>
+
+        <button type="button" class="btn btn-success">
+          Checkout <span class="glyphicon glyphicon-play"></span>
+        </button></td>
+      </div>
+
   </div>
 </div>

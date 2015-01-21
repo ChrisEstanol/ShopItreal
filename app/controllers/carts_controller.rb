@@ -3,7 +3,7 @@ class CartsController < ApplicationController
 
   def show
     cart_ids = $redis.hgetall current_user_cart
-    @cart_products = Product.find(cart_ids)
+    @cart_products = Product.find(cart_ids.keys)
   end
 
   def add
@@ -18,7 +18,7 @@ class CartsController < ApplicationController
     product_id = params[:product_id].to_i
     $redis.hdel current_user_cart, product_id
 
-    redirect_to product_path(product_id)
+    redirect_to :back
   end
 
 

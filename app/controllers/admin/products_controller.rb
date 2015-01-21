@@ -8,7 +8,7 @@ class Admin::ProductsController < ApplicationController
   respond_to :html
 
   def index
-    @products = Product.all
+    @products = current_user.products.all
   end
 
   def show
@@ -26,7 +26,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = current_user.products.new(product_params)
     if @product.save
-      redirect_to [:admin, @product], notice: 'Product was successfully created.'
+      redirect_to [:admin, @product], notice: 'Product was successfully created. NOw just add some pictures and you are done.'
     else
       render action: "new"
     end

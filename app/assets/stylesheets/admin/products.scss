@@ -131,7 +131,6 @@ $green-hover: #16a085;
     }
 
     #page-content-wrapper {
-        padding: 20px;
         position: relative;
     }
 
@@ -139,6 +138,19 @@ $green-hover: #16a085;
         position: relative;
         margin-right: 0;
     }
+}
+
+.form-style {
+  padding: 30px 0;
+}
+
+.text-area textarea.form-control {
+  height: 100px;
+}
+
+span.product-images img {
+  display: inline-block;
+  max-height: 40px;
 }
 
 /* Breadcrumbs style */
@@ -162,21 +174,20 @@ $green-hover: #16a085;
     #crumbs ul li a {
       display: block;
       float: left;
-      height: 50px;
-      background: $green;
+      height: 40px;
+      background: #27ae60;
       text-align: center;
-      padding: 10px 40px 0 80px;
+      padding: 6px 30px 0 50px;
       position: relative;
       margin: 0 10px 0 0;
-
       font-size: 20px;
       text-decoration: none;
       color: #fff;
     }
       #crumbs ul li a:after {
         content: "";
-        border-top: 25px solid transparent;
-        border-bottom: 25px solid transparent;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
         border-left: 40px solid $green;
         position: absolute;
         right: -40px;
@@ -190,8 +201,8 @@ $green-hover: #16a085;
 
       #crumbs ul li a:before {
         content: "";
-        border-top: 25px solid transparent;
-        border-bottom: 25px solid transparent;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
         border-left: 40px solid #fff;
         position: absolute;
         left: 0;
@@ -222,5 +233,11 @@ $green-hover: #16a085;
       }
       #crumbs li.disabled a:hover {
         background-color: lightgrey;
+      }
+      #crumbs li.disabled a:after {
+        border-left: 40px solid lightgrey;
+      }
+      #crumbs li.disabled a:hover:after {
+        border-left: 40px solid lightgrey;
       }
 

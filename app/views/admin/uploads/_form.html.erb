@@ -24,7 +24,7 @@
   <div class="actions">
     <%= f.label :uploaded_file, t('.upload_new_file') %>
     <%= f.file_field :uploaded_file, multiple: true, name: 'upload[image]' %>
-    <%= f.submit %>
+    <%= f.submit "Upload your images", class: "btn btn-primary pull-right" %>
   </div>
 <% end %>
 
