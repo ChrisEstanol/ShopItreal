@@ -14,8 +14,6 @@ class CartsController < ApplicationController
     redirect_to product_path(product_id)
   end
 
-  #
-
   def remove
     product_id = params[:product_id].to_i
     $redis.hdel current_user_cart, product_id
