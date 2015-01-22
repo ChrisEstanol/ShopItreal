@@ -2,8 +2,13 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    cart_ids = $redis.hgetall current_user_cart
-    @cart_products = Product.find(cart_ids.keys)
+     info = $redis.hgetall current_user_cart
+     @cart = Cart.new
+     info.each do |product_id, quantity|
+       @cart.add_item(CartItem.new(product_id, quantity))
+     end
+
+     @cart
   end
 
   def add

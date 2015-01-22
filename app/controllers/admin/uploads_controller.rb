@@ -29,19 +29,16 @@ class Admin::UploadsController < ApplicationController
     @upload = Upload.new(upload_params)
     @upload.product_id = params[:product_id]
     @upload.save
-
   end
 
   # PATCH/PUT /uploads/1
   # PATCH/PUT /uploads/1.json
   def update
-
-      if @upload.update(upload_params)
-        redirect_to @upload, notice: 'Upload was successfully updated.'
-      else
-        render action: 'edit'
-      end
-
+    if @upload.update(upload_params)
+      redirect_to @upload, notice: 'Upload was successfully updated.'
+    else
+      render action: 'edit'
+    end
   end
 
   # DELETE /uploads/1

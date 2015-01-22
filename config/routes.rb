@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :favorite_products
+
   devise_for :users
   get 'pages/home'
 

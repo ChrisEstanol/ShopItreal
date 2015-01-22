@@ -12,17 +12,18 @@
             </ul>
          </div>
         <% end %>
-
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
+      </div>
       <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
       </div>
-
       <div class="form-group">
         <%= f.label :password %>
         <%= f.password_field :password, class: "form-control" %>
       </div>
-
       <div class="form-group">
         <%= f.submit "Sign up", class: "btn btn-primary" %>
       </div>

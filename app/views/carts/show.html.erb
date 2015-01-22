@@ -22,22 +22,22 @@
         </tr>
       </thead>
       <tbody>
-      <% @cart_products.each do |product|%>
+      <% @cart.items.each do |item|%>
         <tr>
           <td class="col-sm-3 col-md-3 cart-product ">
             <div class="media text-center">
-              <%= link_to image_tag(product.uploads.first.image.url(:thumb)), product_path(product) %>
+              <%= link_to image_tag(item.product.uploads.first.image.url(:thumb)), product_path(item.product) %>
               </div>
             </td>
             <td class="col-sm-2 col-md-2 text-center">
-              <h4 class="media-heading"><%= link_to product.name, product_path(product) %></a></h4>
+              <h4 class="media-heading"><%= link_to item.product.name, product_path(item.product) %></a></h4>
             </td>
-            <td class="col-sm-2 col-md-2 text-center"><%= product.quantity %></td>
+            <td class="col-sm-2 col-md-2 text-center"><%= item.quantity %></td>
             </td>
-            <td class="col-sm-2 col-md-2 text-center">$<%= product.price %></td>
-            <td class="col-sm-2 col-md-2 text-center"><strong>$14.61</strong></td>
+            <td class="col-sm-2 col-md-2 text-center">$<%= item.product.price %></td>
+            <td class="col-sm-2 col-md-2 text-center"><strong><%= item.total %></strong></td>
             <td class="col-sm-1 col-md-1 text-center">
-            <%=link_to remove_from_cart_path(product), method: :put do%>
+            <%=link_to remove_from_cart_path(item.product), method: :put do%>
             <span class="glyphicon glyphicon-trash"></span>
             <%end%>
             </td>
@@ -48,7 +48,7 @@
           <td></td>
           <td></td>
           <td class="col-sm-1 col-md-1 text-center"><h5>Subtotal</h5> </td>
-          <td class="col-sm-2 col-md-2 text-center"><h5><strong>$24.59</strong></h5></td>
+          <td class="col-sm-2 col-md-2 text-center"><h5><strong><%= @cart.subtotal %></strong></h5></td>
           <td class="col-sm-3 col-md-3 text-center"></td>
         </tr>
         <tr>
@@ -56,14 +56,14 @@
           <td>   </td>
           <td>   </td>
           <td><h5>Estimated shipping</h5></td>
-          <td class="text-center"><h5><strong>$6.94</strong></h5></td>
+          <td class="text-center"><h5><strong></strong></h5></td>
         </tr>
         <tr>
           <td>   </td>
           <td>   </td>
           <td>   </td>
           <td class="text-center"><h3>Total</h3></td>
-          <td class="text-center"><h3><strong>$31.53</strong></h3></td>
+          <td class="text-center"><h3><strong></strong></h3></td>
         </tr>
 
 
