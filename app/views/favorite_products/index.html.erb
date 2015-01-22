@@ -1,3 +1,32 @@
-<%= @favorites.each |favorite| do %>
-<%= favorite.name %>
-<% end %>
+<div class="row shadow-wrapper">
+  <div class="col-md-12">
+
+<h1> Favorites Products</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Pictures</th>
+          <th>Price</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @favorites.each do |favorite| %>
+        <tr>
+          <td><%= favorite.name %></td>
+          <td>
+            <span class="product-images"><% favorite.uploads.each do |upload| %>
+              <%= image_tag(upload.image(:medium)) %>
+            <% end %></span>
+          </td>
+          <td><%= favorite.price %></td>
+          <td><%= favorite.description %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

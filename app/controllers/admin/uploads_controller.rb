@@ -45,7 +45,7 @@ class Admin::UploadsController < ApplicationController
   # DELETE /uploads/1.json
   def destroy
     @upload.destroy
-      redirect_to [:admin, upload.product, @upload]
+    redirect_to [:admin, @upload.product]
   end
 
   private

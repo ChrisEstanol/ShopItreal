@@ -10,8 +10,12 @@
 
 /* Toggle Styles */
 
-$green: #27ae60;
-$green-hover: #16a085;
+$green: #00968B;
+$green-hover: #48C2B8;
+
+.btn.btn-primary {
+  background-color: $green;
+}
 
 .navbar.navbar-admin {
     margin-bottom: 0;
@@ -175,7 +179,7 @@ span.product-images img {
       display: block;
       float: left;
       height: 40px;
-      background: #27ae60;
+      background: $green;
       text-align: center;
       padding: 6px 30px 0 50px;
       position: relative;

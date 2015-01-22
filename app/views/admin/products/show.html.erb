@@ -29,22 +29,18 @@
 
   <%= render 'admin/uploads/form' %>
 
-
-
-
   </div>
 
-
-    <div class="col-md-8 col-md-offset-2">
-      <% @product.uploads.each do |upload| %>
-      <div class="thumbnail uploaded-pictures">
-        <%= image_tag(upload.image(:thumb)) %>
-        <div class="caption">
-          <%= link_to 'Delete', [:admin, @product, upload], method: :delete, class: "btn btn-alert", data: { confirm: "Are you sure?"} %>
-        </div>
+  <div class="col-md-8 col-md-offset-2">
+    <% @product.uploads.each do |upload| %>
+    <div class="thumbnail uploaded-pictures">
+      <%= image_tag(upload.image(:thumb)) %>
+      <div class="caption">
+        <%= link_to 'Delete', [:admin, @product, upload], method: :delete, class: "btn btn-alert", data: { confirm: "Are you sure?"} %>
       </div>
-      <% end %>
     </div>
+    <% end %>
+  </div>
 
 
 

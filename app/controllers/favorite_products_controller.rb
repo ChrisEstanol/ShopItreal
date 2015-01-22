@@ -1,5 +1,6 @@
 class FavoriteProductsController < ApplicationController
-  before_action :set_product
+  layout "admin"
+  before_action :set_product, except: [:index]
 
   def index
     @favorites = current_user.favorite_products.all
