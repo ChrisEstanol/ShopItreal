@@ -21,10 +21,15 @@
   </div>
 </script>
 
+
   <div class="actions">
-    <%= f.label :uploaded_file, t('.upload_new_file') %>
+  <span class="btn btn-success fileinput-button">
+  <i class="glyphicon glyphicon-plus"></i>
+    <%= f.label :uploaded_file, t('.add_file') %>
     <%= f.file_field :uploaded_file, multiple: true, name: 'upload[image]' %>
+       </span>
     <%= f.submit "Upload your images", class: "btn btn-primary pull-right" %>
+
   </div>
 <% end %>
 

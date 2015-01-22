@@ -1,41 +1,48 @@
-<div class="row">
-  <%= image_tag "store.jpg", class: "carousel"%>
-  
 </div>
+<div class="row carousel">
+
+</div>
+
+<section class="marketing">
+<div class="container">
+  <div class="row"></div>
+  <div class="col-sm-4 col-md-4 text-center">
+    <h3>Buy and sell</h3>
+  </div>
+  <div class="col-sm-4 col-md-4 text-center">
+    <h3>Buy and sell</h3>
+  </div>
+  <div class="col-sm-4 col-md-4 text-center">
+    <h3>Buy and sell</h3>
+  </div>
+  </div>
+</section>
 
 <div class="container">
   <span class="glyphicon glyphicon-gift icon-center"></span>
-  <h3 class="text-center">Encuentra hermosos regalos para esta navidad</h3>
+  <h3 class="text-center">Check out some of the latest products</h3>
 </div>
+
 
 
 <div class="container">
 <div class="row">
-  
-    <div class="col-xs-6 col-sm-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <img data-src="holder.js/100%x180" alt="...">
-      </a>
+
+<% @selection.each do |product| %>
+  <div class="col-sm-4 col-md-3">
+    <div class="thumbnail selection">
+      <% if product.uploads.any? %>
+        <%= link_to image_tag(product.uploads.first.image.url(:medium)), product_path(product) %>
+      <% end %>
+      <div class="caption">
+        <h4><%= product.name %></h4>
+      </div>
     </div>
-  
-  <div class="col-xs-6 col-sm-6 col-md-3">
-    <a href="#" class="thumbnail">
-      <img data-src="holder.js/100%x180" alt="...">
-    </a>
   </div>
+<% end %>
 
-  <div class="col-xs-6 col-sm-6 col-md-3">
-    <a href="#" class="thumbnail">
-      <img data-src="holder.js/100%x180" alt="...">
-    </a>
-  </div>
 
-  <div class="col-xs-6 col-sm-6 col-md-3">
-    <a href="#" class="thumbnail">
-      <img data-src="holder.js/100%x180" alt="...">
-    </a>
-  </div>
-    
+</div>
 </div>
 </div>
 

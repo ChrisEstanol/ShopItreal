@@ -37,6 +37,13 @@
       <strong>Price:</strong>
       $<%= @product.price %>
     </p>
+    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+    <% unless current_user.favorite_products.exists?(id: @product.id) %>
+
+    <%= link_to 'Add to favorites', favorite_products_path(product_id: @product), method: :post %>
+    <% else %>
+    <%= link_to 'Remove from favorites', favorite_product_path(@product), method: :delete %>
+    <% end %>
 
     <div class="well well-sm clearfix">
   <%= form_tag add_to_cart_path(@product), method: :put do %>
