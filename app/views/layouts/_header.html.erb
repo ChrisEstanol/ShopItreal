@@ -24,17 +24,15 @@
                   <div class="col-sm-2 col-sm-offset-2">
                     <h3  class="margin-top-0">Buy</h3>
                     <ul class="list-unstyled">
-                      <li><a href="">test</a></li>
-                      <li><a href="">test</a></li>
-                      <li><a href="">test</a></li>
+                      <li><%= link_to "All products", root_path %></li>
+                      <li><%= link_to "Your favorites", favorite_products_path %></li>
                     </ul>
                     </div>
                     <div class="col-sm-2">
                     <h3 class="margin-top-0">Sell</h3>
                     <ul class="list-unstyled">
-                      <li><a href="">test</a></li>
-                      <li><a href="">test</a></li>
-                      <li><a href="">test</a></li>
+                      <li><%= link_to "New product", new_admin_product_path %></li>
+                      <li><%= link_to "Edit you profile", edit_user_registration_path %></li>
                     </ul>
                   </div>
                   <div class="col-sm-2 nav-border">
@@ -46,9 +44,15 @@
                   <h3 class="margin-top-0">Sign in</h3>
                     <ul class="list-unstyled">
                       <li><%= form_for(:user, :url => session_path(:user)) do |f| %>
-                          <%= f.text_field :email, placeholder: "Email", class: "input-small" %>
-                          <%= f.password_field :password, :placeholder => "Password", class: "input-small"  %>
+                          <div class="form-group">
+                          <%= f.text_field :email, placeholder: "Email", class: "input-small form-control" %>
+                          </div>
+                          <div class="form-group">
+                          <%= f.password_field :password, :placeholder => "Password", class: "input-small form-control"  %>
+                          </div>
+                          <div class="form-group">
                           <%= f.check_box :remember_me, class: "checkbox" %><%= f.label :remember_me, class: "checkbox" %>
+                          </div>
                           <%= f.submit 'Login', class: "btn btn-warning" %>
                         <% end %></li>
                     </ul>

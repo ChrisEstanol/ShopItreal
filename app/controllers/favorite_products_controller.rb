@@ -1,5 +1,6 @@
 class FavoriteProductsController < ApplicationController
   layout "admin"
+  before_action :authenticate_user!, only: [:index, :create, :destroy]
   before_action :set_product, except: [:index]
 
   def index

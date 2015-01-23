@@ -182,6 +182,36 @@ h3.margin-top-0 {
   border-left: 6px solid transparent;
 }
 
+// DROPDOWN styling //
+
+.dropdown-menu {
+  background-color: $green;
+}
+
+.dropdown-menu h3, .dropdown-menu p{
+  color: #fff;
+}
+
+// .dropdown-menu h3 {
+//   text-align: center;
+// }
+
+.open > .dropdown-menu li a {
+  color: lightgrey;
+  text-decoration: none;
+}
+
+
+@media (max-width: 767px) {
+
+  .navbar-nav .open .dropdown-menu {
+  background-color: $green;
+  }
+  .nav.green li a {
+  text-align: center;
+  }
+}
+
 
 .logo-center {
   display: block;
@@ -199,7 +229,7 @@ h3.margin-top-0 {
   letter-spacing: -1px;
   font-weight: bold;
   font-size: 25px;
-  padding: 15px;
+  padding: 11px 15px;
   }
 
 .icon-center{
@@ -229,14 +259,31 @@ input.search-input.form-control {
   width: 100%;
   border: none;
   /* border-bottom: 2px solid rgba(0,0,0,0.2); */
-  /* background-color: transparent; */
-  /* color: #fffed8; */
+  background-color: $green;
+  color: #fff;
   text-overflow: ellipsis;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
+
   input.search-input.form-control:focus {
     outline:none;
+}
+
+.search-input::-webkit-input-placeholder {
+   color: #fff;
+}
+
+.search-input:-moz-placeholder { /* Firefox 18- */
+   color: #fff;
+}
+
+.search-input::-moz-placeholder {  /* Firefox 19+ */
+   color: #fff;
+}
+
+.search-input:-ms-input-placeholder {
+   color: #fff;
 }
 
 // LANDING style //
@@ -248,8 +295,22 @@ input.search-input.form-control {
 
 footer {
 width: 100%;
-height: 60px;
-background-color: #fff;
+height: 150px;
+padding: 30px;
+background-color: $green;
 @include box-shadow-footer;
 margin-top: 70px;
+}
+
+footer h3, footer p {
+  color: #fff;
+}
+
+footer li a {
+  color: lightgrey;
+  text-decoration: none;
+}
+
+footer .nav-border {
+  border-right: 1px solid lightgrey;
 }

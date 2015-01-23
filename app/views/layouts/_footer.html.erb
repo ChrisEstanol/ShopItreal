@@ -1,5 +1,25 @@
 <footer class="footer">
   <div class="container">
-    <p class="text-muted">Place sticky footer content here.</p>
+    <div class="row">
+      <div class="col-md-2 col-sm-offset-2 nav-border">
+        <h3  class="margin-top-0">Buy</h3>
+        <ul class="list-unstyled">
+          <li><%= link_to "All products", root_path %></li>
+          <li><%= link_to "Your favorites", favorite_products_path %></li>
+        </ul>
+        </div>
+        <div class="col-md-2 nav-border">
+        <h3 class="margin-top-0">Sell</h3>
+        <ul class="list-unstyled">
+          <li><%= link_to "New product", new_admin_product_path %></li>
+          <li><%= link_to "Edit you profile", edit_user_registration_path %></li>
+        </ul>
+      </div>
+      <div class="col-md-4 ">
+      <h3 class="margin-top-0">Our newsletter</h3>
+        <p class=""> Sign in to receive all our update.</p>
+
+      </div>
+    </div>
   </div>
 </footer>

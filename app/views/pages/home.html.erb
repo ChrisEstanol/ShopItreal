@@ -8,15 +8,15 @@
   <div class="row"></div>
   <div class="col-sm-4 col-md-4 text-center">
     <i class="icon-picture"></i>
-    <p>Bacon ipsum dolor amet pork belly landjaeger meatloaf ribeye venison. Tri-tip beef kevin strip steak landjaeger pig bresaola, cow sirloin beef ribs spare ribs. Shoulder venison corned beef t-bone shank boudin brisket pancetta biltong chuck bresaola beef ribs drumstick meatball strip steak</p>
+    <h4>Enjoy a selection of unique product, handmades, in limited series that  you won't find anywhere else</h4>
   </div>
   <div class="col-sm-4 col-md-4 text-center">
     <i class="icon-earth-globe-streamline"></i>
-    <p>Bacon ipsum dolor amet pork belly landjaeger meatloaf ribeye venison. Tri-tip beef kevin strip steak landjaeger pig bresaola, cow sirloin beef ribs spare ribs. Shoulder venison corned beef t-bone shank boudin brisket pancetta biltong chuck bresaola beef ribs drumstick meatball strip steak</p>
+    <h4>Our products come from all over the world. </h4>
   </div>
   <div class="col-sm-4 col-md-4 text-center">
     <i class="icon-computer-imac"></i>
-    <p>Bacon ipsum dolor amet pork belly landjaeger meatloaf ribeye venison. Tri-tip beef kevin strip steak landjaeger pig bresaola, cow sirloin beef ribs spare ribs. Shoulder venison corned beef t-bone shank boudin brisket pancetta biltong chuck bresaola beef ribs drumstick meatball strip steak</p>
+    <h4>And all from the confort of your own home. We have also worked hard so that you can browse aour website in your tablet and phone.</h4>
   </div>
   </div>
 </section>
@@ -31,18 +31,18 @@
 <div class="container">
 <div class="row">
 
-<% @selection.each do |product| %>
-  <div class="col-sm-4 col-md-3">
-    <div class="thumbnail selection">
+<div id="products" class="transitions-enabled">
+  <% @selection.each do |product| %>
+    <div class="box panel panel-default">
       <% if product.uploads.any? %>
         <%= link_to image_tag(product.uploads.first.image.url(:medium)), product_path(product) %>
       <% end %>
-      <div class="caption">
-        <h4><%= product.name %></h4>
+      <div class="panel-body">
+        <h5><%= product.name %></h5>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 
 </div>

@@ -10,6 +10,7 @@
           <th>Pictures</th>
           <th>Price</th>
           <th>Description</th>
+          <th>remove</th>
         </tr>
       </thead>
       <tbody>
@@ -23,6 +24,7 @@
           </td>
           <td><%= favorite.price %></td>
           <td><%= favorite.description %></td>
+          <td><%= link_to 'Remove', favorite_product_path(favorite), method: :delete %></td>
         </tr>
         <% end %>
       </tbody>
