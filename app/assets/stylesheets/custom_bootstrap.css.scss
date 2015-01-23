@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+h1,h2,h3,h4,h5,h6,p {
+  font-family: 'Open Sans', sans-serif;
+}
+
 @mixin box-shadow {
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
@@ -16,14 +20,22 @@
 $green: #00968B;
 $green-hover: #48C2B8;
 
-// html {
-//   height: 100%
-// }
+.btn.btn-primary {
+  background-color: $green;
+  border: 1px solid $green;
+}
+.btn.btn-primary:hover {
+  background-color: $green-hover;
+  border: 1px solid $green-hover;
+}
+
 
 body {
   background-color: #E9EAED;
   padding-top: 70px;
 }
+
+// LANDING style //
 
 .carousel {
   width: auto;
@@ -111,22 +123,84 @@ body {
   border: none;
   background-color: #fff;
   margin-bottom: 51px;
-  .navbar-brand {
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    font-weight: bold;
-    font-size: 25px;
-  }
+  font-size: 1.8em;
 }
 
 .nav.green li a {
-  font-size: 1.8em;
   color: $green;
 }
 
 .nav.green li a:hover {
   color: $green-hover;
 }
+
+h3.margin-top-0 {
+  margin-top: 0px;
+}
+
+// CSS3 ANIMATION DROPDOWN NAV
+.open > .dropdown-menu {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+
+}
+.open > .dropdown-menu li a {
+  color: #000;
+}
+.dropdown-menu li a{
+  color: #fff;
+}
+.dropdown-menu {
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transform: scale(1, 0);
+  display: block;
+
+  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+}
+.dropup .dropdown-menu {
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+
+.navbar .nav > li > .dropdown-menu:after {
+
+}
+.dropup > .dropdown-menu:after {
+  border-bottom: 0;
+  border-top: 6px solid rgba(39, 45, 51, 0.9);
+  top: auto;
+  display: inline-block;
+  bottom: -6px;
+  content: '';
+  position: absolute;
+  left: 50%;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+
+.logo-center {
+  display: block;
+  position: absolute;
+  left: 44%;
+}
+
+.navbar .logo-center a {
+  text-decoration: none;
+  color: pink;
+}
+
+.navbar .logo-center {
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 15px;
+  }
 
 .icon-center{
   color: #16a085;
@@ -165,46 +239,12 @@ input.search-input.form-control {
     outline:none;
 }
 
-// PRODUCTS Styling
+// LANDING style //
 
-#products {
-  margin: 0 auto;
+.marketing i {
+  font-size: 80px;
+  color: $green;
 }
-
-.box {
-  margin: 5px;
-  width: 214px;
-}
-
-.box img {
-  width: 100%;
-}
-
-.panel-body {
-  background-color: #fff;
-  @include box-shadow;
-}
-
-.masonry-brick {
-  background: #fff;
-  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-border-radius: 6px;
-}
-
-#galleria {
-  width: 600px;
-  height: 500px;
-  background: white;
-}
-.galleria-theme-classic {
-  background-color: #fff;
-}
-
-.sqs-gallery-controls .previous { display: none !important; }
-.sqs-gallery-controls .next { display: none !important; }
-.nav-button.prev-slide { display: none !important; }
-.nav-button.next-slide { display: none !important; }
 
 footer {
 width: 100%;

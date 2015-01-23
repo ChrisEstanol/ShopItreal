@@ -19,6 +19,16 @@
   </div>
 
   <div class="col-md-5">
+  <div class="add-favorite pull-right btn btn-default">
+    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+    <% unless current_user.favorite_products.exists?(id: @product.id) %>
+
+    <%= link_to 'Add to favorites', favorite_products_path(product_id: @product), method: :post %>
+    <% else %>
+    <%= link_to 'Remove from favorites', favorite_product_path(@product), method: :delete %>
+    <% end %>
+  </div>
+  <div class="product-details">
     <h2>Product details</h2>
     <p>
       <strong>Name:</strong>
@@ -37,15 +47,10 @@
       <strong>Price:</strong>
       $<%= @product.price %>
     </p>
-    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-    <% unless current_user.favorite_products.exists?(id: @product.id) %>
+    </div>
 
-    <%= link_to 'Add to favorites', favorite_products_path(product_id: @product), method: :post %>
-    <% else %>
-    <%= link_to 'Remove from favorites', favorite_product_path(@product), method: :delete %>
-    <% end %>
 
-    <div class="well well-sm clearfix">
+    <div class="well well-sm well-cart clearfix">
   <%= form_tag add_to_cart_path(@product), method: :put do %>
     <div class="form-group col-sm-3 text-center">
       <%= label_tag :quantity %>
@@ -63,7 +68,11 @@
      <%end%>
     </div>
   <% end %>
+
   </div>
+
+  <%= render_shareable :buttons=> ['facebook', 'twitter', 'pinterest', 'google_plus'] %>
+
 
 </div>
 

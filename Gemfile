@@ -27,6 +27,7 @@ gem 'hiredis', '~> 0.5.2'
 gem 'aws-sdk', '~> 1.61.0'
 
 gem 'ransack'
+gem 'shareable'
 
 
 group :development, :test do

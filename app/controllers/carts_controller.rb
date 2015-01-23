@@ -16,14 +16,14 @@ class CartsController < ApplicationController
     quantity = params[:quantity].to_i
     $redis.hset current_user_cart, product_id, quantity
 
-    redirect_to product_path(product_id)
+    redirect_to product_path(product_id), notice: 'Product has been added to your cart.'
   end
 
   def remove
     product_id = params[:product_id].to_i
     $redis.hdel current_user_cart, product_id
 
-    redirect_to :back
+    redirect_to :back, notice: 'Product has been removed from your cart.'
   end
 
 

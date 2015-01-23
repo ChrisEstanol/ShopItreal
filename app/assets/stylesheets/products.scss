@@ -1,19 +1,96 @@
-// Place all the styles related to the Products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1,h2,h3,h4,h5,h6,p {
+  font-family: 'Open Sans', sans-serif;
+}
 
+@mixin box-shadow {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+}
 
+@mixin box-shadow-footer {
+  -webkit-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.22);
+  box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.22);
+}
+
+// PRODUCTS Styling
+
+#products {
+  margin: 0 auto;
+}
+
+.box {
+  margin: 5px;
+  width: 214px;
+}
+
+.box img {
+  width: 100%;
+}
+
+.panel-body {
+  background-color: #fff;
+  @include box-shadow;
+}
+
+.panel-body {
+padding: 10px;
+}
+
+.panel-body h5, .panel-body p {
+  padding:0;
+  margin:0;
+}
+
+.panel-body p {
+  color: grey;
+}
+
+.masonry-brick {
+  background: #fff;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  border-radius: 6px;
+}
+
+// GALLERIA style //
 #galleria {
-    // height: auto !important;
-    // max-width: 100%;
-    // min-height: 320px;
+  width: 600px;
+  height: 500px;
+  background: white;
+}
+.galleria-theme-classic {
+  background-color: #fff;
+}
+
+.sqs-gallery-controls .previous { display: none !important; }
+.sqs-gallery-controls .next { display: none !important; }
+.nav-button.prev-slide { display: none !important; }
+.nav-button.next-slide { display: none !important; }
+
+// PRODUCT VIEW style //
+
+.well-cart {
+  margin: 30px 0;
 }
 
 .btn-cart {
   margin: 25px auto;
 }
 
-.panel-body h5, .panel-body p {
-  padding:0;
-  margin:0;
+.add-favorite {
+  margin: 30px;
+}
+
+.product-details {
+  margin-top: 100px;
+}
+
+.add-favorite a {
+  text-decoration: none;
+}
+.add-favorite span.glyphicon.glyphicon-heart {
+  font-size: 20px;
+  color: grey;
 }

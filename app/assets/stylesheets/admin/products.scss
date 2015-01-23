@@ -1,21 +1,24 @@
-// Place all the styles related to the admin/products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1,h2,h3,h4,h5,h6,p {
+  font-family: 'Open Sans', sans-serif;
+}
 
-/*!
- * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+@mixin box-shadow {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+}
 
-/* Toggle Styles */
+@mixin box-shadow-footer {
+  -webkit-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.22);
+  box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.22);
+}
 
 $green: #00968B;
 $green-hover: #48C2B8;
 
-.btn.btn-primary {
-  background-color: $green;
-}
+// PRODUCTS/ADMIN Styling
+
 
 .navbar.navbar-admin {
     margin-bottom: 0;
