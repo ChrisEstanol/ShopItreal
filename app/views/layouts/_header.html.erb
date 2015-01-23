@@ -75,7 +75,7 @@
         <li><%= link_to favorite_products_path do %>
           <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
           <% if user_signed_in? %>
-              <span class="badge"><%=Favorite.count%></span>
+              <span class="badge"><%=current_user.favorite_products.count%></span>
             <% end %>
           <% end %>
         <li>
