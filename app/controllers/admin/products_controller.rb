@@ -26,7 +26,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = current_user.products.new(product_params)
     if @product.save
-      redirect_to [:admin, @product], notice: 'Product was successfully created. NOw just add some pictures and you are done.'
+      redirect_to [:admin, @product], notice: 'Product was successfully created. Now just add some pictures and you are done.'
     else
       render action: "new"
     end
@@ -39,7 +39,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     if @product.update_attributes(product_params)
-      redirect_to @product, notice: 'Product was successfully updated.'
+      redirect_to [:admin, @product], notice: 'Product was successfully updated. Do you need to change the pictures.'
     else
       render action: "edit"
     end

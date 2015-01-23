@@ -104,6 +104,14 @@ body {
     background-color: $green;
     color: white;
   }
+
+  .well-devise h1 {
+    text-align: center;
+  }
+
+  .well-devise a {
+    color: white;
+  }
 //
 
 // user dashboard
@@ -199,6 +207,10 @@ h3.margin-top-0 {
 .open > .dropdown-menu li a {
   color: lightgrey;
   text-decoration: none;
+}
+
+.open > .dropdown-menu li a.btn-register {
+  color: #fff;
 }
 
 

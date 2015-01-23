@@ -19,14 +19,16 @@
   </div>
 
   <div class="col-md-5">
-  <div class="add-favorite pull-right btn btn-default">
-    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-    <% unless current_user.favorite_products.exists?(id: @product.id) %>
-    <%= link_to 'Add to favorites', favorite_products_path(product_id: @product), method: :post %>
-    <% else %>
-    <%= link_to 'Remove from favorites', favorite_product_path(@product), method: :delete %>
+    <% if user_signed_in? %>
+      <div class="add-favorite pull-right btn btn-default">
+        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+        <% unless current_user.favorite_products.exists?(id: @product.id) %>
+        <%= link_to 'Add to favorites', favorite_products_path(product_id: @product), method: :post %>
+        <% else %>
+        <%= link_to 'Remove from favorites', favorite_product_path(@product), method: :delete %>
+        <% end %>
+      </div>
     <% end %>
-  </div>
   <div class="product-details">
     <h2>Product details</h2>
     <p>
